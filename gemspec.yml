@@ -1,8 +1,8 @@
-name: ronin-exfil
+name: ronin-listener
 summary: A Ruby CLI utility for receiving exfiltrated data.
 description: |
-  ronin-exfil is a small CLI utility for receiving exfiltrated data over DNS or
-  HTTP.
+  ronin-listener is a small CLI utility for receiving exfiltrated data over DNS
+  or HTTP.
 
 license: LGPL-3.0
 authors: Postmodern
@@ -11,23 +11,23 @@ homepage: https://ronin-rb.dev/
 has_yard: true
 
 metadata:
-  documentation_uri: https://ronin-rb.dev/docs/ronin-exfil
-  source_code_uri:   https://github.com/ronin-rb/ronin-exfil
-  bug_tracker_uri:   https://github.com/ronin-rb/ronin-exfil/issues
-  changelog_uri:     https://github.com/ronin-rb/ronin-exfil/blob/main/ChangeLog.md
+  documentation_uri: https://ronin-rb.dev/docs/ronin-listener
+  source_code_uri:   https://github.com/ronin-rb/ronin-listener
+  bug_tracker_uri:   https://github.com/ronin-rb/ronin-listener/issues
+  changelog_uri:     https://github.com/ronin-rb/ronin-listener/blob/main/ChangeLog.md
   rubygems_mfa_required: 'true'
 
 generated_files:
- - man/ronin-exfil.1
- - man/ronin-exfil-dns.1
- - man/ronin-exfil-http.1
+ - man/ronin-listener.1
+ - man/ronin-listener-dns.1
+ - man/ronin-listener-http.1
 
 required_ruby_version: ">= 3.0.0"
 
 dependencies:
   # Ronin dependencies:
-  ronin-exfil-dns: ~> 0.1
-  ronin-exfil-http: ~> 0.1
+  ronin-listener-dns: ~> 0.1
+  ronin-listener-http: ~> 0.1
   ronin-core: ~> 0.1
 
 development_dependencies:

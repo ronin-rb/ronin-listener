@@ -11,10 +11,10 @@ end
 # Ronin dependencies
 # gem 'ronin-core',       '~> 0.1', github: "ronin-rb/ronin-core",
 #                                   branch: 'main'
-gem 'ronin-exfil-dns',  '~> 0.1', github: "ronin-rb/ronin-exfil-dns",
-                                  branch: 'main'
-gem 'ronin-exfil-http', '~> 0.1', github: "ronin-rb/ronin-exfil-http",
-                                  branch: 'main'
+gem 'ronin-listener-dns',  '~> 0.1', github: "ronin-rb/ronin-listener-dns",
+                                     branch: 'main'
+gem 'ronin-listener-http', '~> 0.1', github: "ronin-rb/ronin-listener-http",
+                                     branch: 'main'
 
 group :development do
   gem 'rake'

@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 #
-# ronin-exfil - A Ruby CLI utility for receiving exfiltrated data.
+# ronin-listener - A Ruby CLI utility for receiving exfiltrated data.
 #
 # Copyright (c) 2023 Hal Brodigan (postmodern.mod3@gmail.com)
 #
-# ronin-exfil is free software: you can redistribute it and/or modify
+# ronin-listener is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published
 # by the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# ronin-exfil is distributed in the hope that it will be useful,
+# ronin-listener is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public License
-# along with ronin-exfil.  If not, see <https://www.gnu.org/licenses/>.
+# along with ronin-listener.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/exfil/cli/command'
-require 'ronin/exfil/http'
+require 'ronin/listener/cli/command'
+require 'ronin/listener/http'
 
 require 'ronin/core/cli/logging'
 
 module Ronin
-  module Exfil
+  module Listener
     class CLI
       module Commands
         #
@@ -32,7 +32,7 @@ module Ronin
         #
         # ## Usage
         #
-        #     ronin-exfil http [options]
+        #     ronin-listener http [options]
         #
         # ## Options
         #
@@ -80,13 +80,13 @@ module Ronin
 
           description 'Starts a HTTP server for receiving exfiltrated data'
 
-          man_page 'ronin-exfil-http.1'
+          man_page 'ronin-listener-http.1'
 
           #
-          # Runs the `ronin-exfil http` command.
+          # Runs the `ronin-listener http` command.
           #
           def run
-            Ronin::Exfil::HTTP.listen(**proxy_kwargs) do |request|
+            Ronin::Listener::HTTP.listen(**proxy_kwargs) do |request|
               remote_addr = request.remote_address
 
               log_info "Received HTTP request from #{remote_addr.ip_address}:#{remote_addr.ip_port} ..."
@@ -103,7 +103,7 @@ module Ronin
           end
 
           #
-          # Maps options to keyword arguments for `Ronin::Exfil::HTTP.listen`.
+          # Maps options to keyword arguments for `Ronin::Listener::HTTP.listen`.
           #
           # @return [Hash{Symbol => Object}]
           #

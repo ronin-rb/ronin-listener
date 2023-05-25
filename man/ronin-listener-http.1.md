@@ -1,8 +1,8 @@
-# ronin-exfil-http 1 "2023-03-24" Ronin Exfil "User Manuals"
+# ronin-listener-http 1 "2023-03-24" Ronin Exfil "User Manuals"
 
 ## SYNOPSIS
 
-`ronin-exfil http` [*options*]
+`ronin-listener http` [*options*]
 
 ## DESCRIPTION
 
@@ -31,4 +31,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-ronin-exfil-dns(1)
+ronin-listener-dns(1)
