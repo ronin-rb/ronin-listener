@@ -44,6 +44,10 @@ module Ronin
         #
         #     DOMAIN                           The domain to receive queries for
         #
+        # ## Examples
+        #
+        #     ronin-listener dns -H 127.0.0.1 -p 5553 example.com
+        #
         class Dns < Command
 
           include Core::CLI::Logging
@@ -70,6 +74,10 @@ module Ronin
                             desc:     'The domain to receive queries for'
 
           description 'Starts a DNS server for receiving exfiltrated data'
+
+          examples [
+            '-H 127.0.0.1 -p 5553 example.com'
+          ]
 
           man_page 'ronin-listener-dns.1'
 

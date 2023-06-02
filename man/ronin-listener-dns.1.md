@@ -24,6 +24,12 @@ Starts a DNS server for receiving exfiltrated data.
 `-h`, `--help`
   Prints help information.
 
+## EXAMPLES
+
+Runs a DNS listener on `127.0.0.1:5553` for domain `example.com`:
+
+        $ ronin-listener dns -H 127.0.0.1 -p 5553 example.com
+
 ## AUTHOR
 
 Postmodern <postmodern.mod3@gmail.com>
