@@ -30,6 +30,10 @@ Runs a DNS listener on `127.0.0.1:5553` for domain `example.com`:
 
         $ ronin-listener dns -H 127.0.0.1 -p 5553 example.com
 
+Run a DNS listener on `0.0.0.0:53` for domain `example.com` as root:
+
+        $ sudo ronin-listener dns example.com
+
 ## AUTHOR
 
 Postmodern <postmodern.mod3@gmail.com>
