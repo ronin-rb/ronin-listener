@@ -80,8 +80,10 @@ module Ronin
           #   The `DOMAIN` argument.
           #
           def run(domain)
-            Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query_type,query_value|
-              log_info "Received DNS query: #{query_type} #{query_value}"
+            Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query|
+              remote_address = query.remote_address
+
+              log_info "Received DNS query: #{query.type} #{query.label} from #{remote_address.ip_address}:#{remote_address.ip_port}"
             end
           end
 
