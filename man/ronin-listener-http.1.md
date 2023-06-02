@@ -25,6 +25,20 @@ Starts a HTTP server for receiving exfiltrated data.
 `-h`, `--help`
   Prints help information.
 
+## EXAMPLES
+
+Runs a HTTP listener on `127.0.0.1:8080` that will receive any request:
+
+        $ ronin-listener http -p 8080
+
+Runs a HTTP listener on `127.0.0.1:8080` for the virtual-host `example.com`:
+
+        $ ronin-listener http -p 8080 --vhost example.com
+
+Run a HTTP listener on `0.0.0.0:80` as root:
+
+        $ sudo ronin-listener http
+
 ## AUTHOR
 
 Postmodern <postmodern.mod3@gmail.com>

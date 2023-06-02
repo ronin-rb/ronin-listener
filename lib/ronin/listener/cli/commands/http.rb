@@ -42,6 +42,11 @@ module Ronin
         #     -R, --root DIR                   The root directory to filter requests by (Default: /)
         #     -h, --help                       Print help information
         #
+        # ## Examples
+        #
+        #     ronin-listener http -H 127.0.0.1 -p 8080
+        #     ronin-listener http -H 127.0.0.1 -p 8080 --vhost example.com
+        #
         class Http < Command
 
           include Core::CLI::Logging
@@ -79,6 +84,11 @@ module Ronin
                         desc: 'The root directory to filter requests by'
 
           description 'Starts a HTTP server for receiving exfiltrated data'
+
+          examples [
+            '-H 127.0.0.1 -p 8080',
+            '-H 127.0.0.1 -p 8080 --vhost example.com'
+          ]
 
           man_page 'ronin-listener-http.1'
 
