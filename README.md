@@ -25,7 +25,7 @@ HTTP.
 
 ## Synopsis
 
-```shell
+```
 $ ronin-listener
 Usage: ronin-listener [options]
 
