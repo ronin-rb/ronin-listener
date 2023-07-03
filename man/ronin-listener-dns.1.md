@@ -1,4 +1,4 @@
-# ronin-listener-dns 1 "2023-03-24" Ronin Exfil "User Manuals"
+# ronin-listener-dns 1 "2023-03-24" Ronin Listener "User Manuals"
 
 ## SYNOPSIS
 
