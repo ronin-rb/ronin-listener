@@ -15,6 +15,15 @@ Creates a new standalone DNS listener Ruby script.
 
 ## OPTIONS
 
+`-H`, `--host` *IP*
+  The interface to listen on. Defaults to `0.0.0.0` if not given.
+
+`-p`, `--port` *PORT*
+  The port to listen on. Defaults to `5553` if not given.
+
+`-d`, `--domain` *DOMAIN*
+  The domain to receive queries for. Defaults to `example.com` if not given.
+
 `-h`, `--help`
   Print help information
 
