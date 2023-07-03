@@ -43,6 +43,36 @@ Commands:
     http
 ```
 
+Listen for DNS queries on `127.0.0.1` port `5553` for the domain `example.com`:
+
+```shell
+ronin-listener dns -H 127.0.0.1 -p 5553 example.com
+```
+
+Listen for HTTP requests on `127.0.0.1` port `8080`:
+
+```shell
+ronin-listener http -H 127.0.0.1 -p 8080
+```
+
+Listen specifically for HTTP requests sent to `example.com`:
+
+```shell
+ronin-listener http -H 127.0.0.1 -p 8080 --vhost example.com
+```
+
+Generate a new standalone DNS listener Ruby script:
+
+```shell
+ronin-listener new dns file.rb
+```
+
+Generate a new standalone HTTP listener Ruby script:
+
+```shell
+ronin-listener new http file.rb
+```
+
 ## Requirements
 
 * [Ruby] >= 3.0.0
