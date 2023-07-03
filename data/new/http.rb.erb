@@ -2,7 +2,7 @@
 
 require 'ronin/listener/http'
 
-Ronin::Listener::HTTP.listen(host: '127.0.0.1', port: 8080) do |request|
+Ronin::Listener::HTTP.listen(host: <%= @host.inspect -%>, port: <%= @port -%><%- if @vhost -%>, vhost: <%= @vhost.inspect %><%- end -%><%- if @root -%>, root: <%= @root.inspect -%><%- end -%>) do |request|
   puts "#{request.method} #{request.path} #{request.version}"
 
   request.headers.each do |name,value|

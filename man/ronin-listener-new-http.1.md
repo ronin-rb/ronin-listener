@@ -15,6 +15,18 @@ Creates a new standalone HTTP listener Ruby script.
 
 ## OPTIONS
 
+`-H`, `--host` *IP*
+  The interface to listen on. Defaults to `0.0.0.0` if not given.
+
+`-p`, `--port` *PORT*
+  The port to listen on. Defaults to `8080` if not given.
+
+`--vhost` *HOST*
+  The `Host:` header to filter requests by.
+
+`-R`, `--root` *DIR*
+  The root directory to filter requests by.
+
 `-h`, `--help`
   Print help information
 
