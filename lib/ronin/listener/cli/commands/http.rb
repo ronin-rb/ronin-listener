@@ -96,7 +96,7 @@ module Ronin
           # Runs the `ronin-listener http` command.
           #
           def run
-            Ronin::Listener::HTTP.listen(**proxy_kwargs) do |request|
+            Ronin::Listener::HTTP.listen(**server_kwargs) do |request|
               remote_addr = request.remote_address
 
               log_info "Received HTTP request from #{remote_addr.ip_address}:#{remote_addr.ip_port} ..."
@@ -117,7 +117,7 @@ module Ronin
           #
           # @return [Hash{Symbol => Object}]
           #
-          def proxy_kwargs
+          def server_kwargs
             {
               host:  options[:host],
               port:  options[:port],
