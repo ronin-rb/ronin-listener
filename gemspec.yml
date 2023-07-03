@@ -21,6 +21,9 @@ generated_files:
  - man/ronin-listener.1
  - man/ronin-listener-dns.1
  - man/ronin-listener-http.1
+ - man/ronin-listener-new.1
+ - man/ronin-listener-new-dns.1
+ - man/ronin-listener-new-http.1
 
 required_ruby_version: ">= 3.0.0"
 
