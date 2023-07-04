@@ -19,6 +19,7 @@
 #
 
 require 'ronin/listener/cli/command'
+require 'ronin/listener/output_formats'
 require 'ronin/listener/dns'
 
 require 'ronin/core/cli/logging'
@@ -36,6 +37,9 @@ module Ronin
         #
         # ## Options
         #
+        #     -o, --output FILE                The output file to write DNS queries to
+        #     -F, --output-format txt|csv|json|ndjson
+        #                                      The output format
         #     -H, --host IP                    The interface to listen on (Default: 0.0.0.0)
         #     -p, --port PORT                  The port to listen on (Default: 53)
         #     -h, --help                       Print help information
@@ -53,6 +57,22 @@ module Ronin
           include Core::CLI::Logging
 
           usage '[options] DOMAIN'
+
+          option :output, short: '-o',
+                          value: {
+                            type:  String,
+                            usage: 'FILE'
+                          },
+                          desc: 'The output file to write DNS queries to' do |path|
+                            options[:output]          = path
+                            options[:output_format] ||= OutputFormats.infer_from(path)
+                          end
+
+          option :output_format, short: '-F',
+                                 value: {
+                                   type: OutputFormats.formats
+                                 },
+                                 desc: 'The output format'
 
           option :host, short: '-H',
                         value: {
@@ -88,10 +108,13 @@ module Ronin
           #   The `DOMAIN` argument.
           #
           def run(domain)
-            Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query|
-              remote_address = query.remote_address
+            output_file = if options[:output] && options[:output_format]
+                            options[:output_format].open(options[:output])
+                          end
 
-              log_info "Received DNS query: #{query.type} #{query.label} from #{remote_address.ip_address}:#{remote_address.ip_port}"
+            Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query|
+              log_info "Received DNS query: #{query.type} #{query.label} from #{query.source}"
+              output_file << query if output_file
             end
           end
 
