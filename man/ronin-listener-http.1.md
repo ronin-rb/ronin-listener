@@ -10,6 +10,14 @@ Starts a HTTP server for receiving exfiltrated data.
 
 ## OPTIONS
 
+`-o`, `--output` *FILE*
+  The output file to write the received DNS queries to.
+
+`-F`, `--output-format` `txt`|`csv`|`json`|`ndjson`
+  The output format to use. If not specified, the output format will be inferred
+  from the output file's extension. If the output format cannot be inferred from
+  the output file's extension, then it will default to `txt` format.
+
 `-H`, `--host` *IP*
   The interface to listen on. Defaults to `0.0.0.0` if not given.
 

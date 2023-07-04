@@ -19,6 +19,7 @@
 #
 
 require 'ronin/listener/cli/command'
+require 'ronin/listener/output_formats'
 require 'ronin/listener/http'
 
 require 'ronin/core/cli/logging'
@@ -36,6 +37,9 @@ module Ronin
         #
         # ## Options
         #
+        #     -o, --output FILE                The output file to write HTTP requests to
+        #     -F, --output-format txt|csv|json|ndjson
+        #                                      The output format
         #     -H, --host IP                    The interface to listen on (Default: 0.0.0.0)
         #     -p, --port PORT                  The port to listen on (Default: 8080)
         #         --vhost HOST                 The Host: header to filter requests by
@@ -52,6 +56,22 @@ module Ronin
           include Core::CLI::Logging
 
           usage '[options]'
+
+          option :output, short: '-o',
+                          value: {
+                            type:  String,
+                            usage: 'FILE'
+                          },
+                          desc: 'The output file to write HTTP requests to' do |path|
+                            options[:output]          = path
+                            options[:output_format] ||= OutputFormats.infer_from(path)
+                          end
+
+          option :output_format, short: '-F',
+                                 value: {
+                                   type: OutputFormats.formats
+                                 },
+                                 desc: 'The output format'
 
           option :host, short: '-H',
                         value: {
@@ -96,6 +116,10 @@ module Ronin
           # Runs the `ronin-listener http` command.
           #
           def run
+            output_file = if options[:output] && options[:output_format]
+                            options[:output_format].open(options[:output])
+                          end
+
             Ronin::Listener::HTTP.listen(**server_kwargs) do |request|
               remote_addr = request.remote_address
 
@@ -109,6 +133,8 @@ module Ronin
 
               puts request.body if request.body
               puts
+
+              output_file << request if output_file
             end
           end
 
