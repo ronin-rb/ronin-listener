@@ -9,8 +9,8 @@ platform :jruby do
 end
 
 # Ronin dependencies
-# gem 'ronin-core',       '~> 0.1', github: 'ronin-rb/ronin-core',
-#                                   branch: 'main'
+gem 'ronin-core',          '~> 0.1', github: 'ronin-rb/ronin-core',
+                                     branch: '0.2.0'
 gem 'ronin-listener-dns',  '~> 0.1', github: 'ronin-rb/ronin-listener-dns',
                                      branch: 'main'
 gem 'ronin-listener-http', '~> 0.1', github: 'ronin-rb/ronin-listener-http',
