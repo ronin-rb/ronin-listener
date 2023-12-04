@@ -11,7 +11,7 @@ Allows quickly starting a DNS or HTTP server for receiving exfiltrated data.
 ## OPTIONS
 
 `-h`, `--help`
-  Prints help information.
+: Prints help information.
 
 ## AUTHOR
 
@@ -19,4 +19,4 @@ Postmodern <postmodern.mod3@gmail.com>
 
 ## SEE ALSO
 
-ronin-listener-dns(1) ronin-listener-http(1)
+[ronin-listener-dns](ronin-listener-dns.1.md) [ronin-listener-http](ronin-listener-http.1.md)
