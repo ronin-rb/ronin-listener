@@ -33,11 +33,11 @@ Creates a new DNS or HTTP listener Ruby script.
 
 Generate a new DNS listener Ruby script:
 
-    ronin-listener new dns file.rb
+    $ ronin-listener new dns file.rb
 
 Generate a new HTTP listener Ruby script:
 
-    ronin-listener new http file.rb
+    $ ronin-listener new http file.rb
 
 ## AUTHOR
 
