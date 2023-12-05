@@ -1,5 +1,9 @@
 # ronin-listener-dns 1 "2023-03-24" Ronin Listener "User Manuals"
 
+## NAME
+
+ronin-listener-dns - Starts a DNS server for receiving exfiltrated data
+
 ## SYNOPSIS
 
 `ronin-listener dns` [*options*] *DOMAIN*

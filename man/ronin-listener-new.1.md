@@ -1,5 +1,9 @@
 # ronin-listener-new 1 "2023-02-01" Ronin Listener "User Manuals"
 
+## NAME
+
+ronin-listener-new - Creates a new DNS or HTTP listener Ruby script
+
 ## SYNOPSIS
 
 `ronin-listener new` [*options*] [*COMMAND*]

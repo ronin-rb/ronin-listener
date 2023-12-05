@@ -1,5 +1,9 @@
 # ronin-listener 1 "2023-02-01" Ronin Listener "User Manuals"
 
+## NAME
+
+ronin-listener - A Ruby CLI utility for receiving exfiltrated data
+
 ## SYNOPSIS
 
 `ronin-listener` [*options*] [*COMMAND*]

@@ -1,5 +1,9 @@
 # ronin-listener-http 1 "2023-03-24" Ronin Listener "User Manuals"
 
+## NAME
+
+ronin-listener-http - Starts a HTTP server for receiving exfiltrated data
+
 ## SYNOPSIS
 
 `ronin-listener http` [*options*]
