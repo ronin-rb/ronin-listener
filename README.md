@@ -37,6 +37,7 @@ Arguments:
     [ARGS ...]                       Additional arguments for the command
 
 Commands:
+    completion
     dns
     help
     http
