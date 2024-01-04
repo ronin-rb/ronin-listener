@@ -45,8 +45,6 @@ module Ronin
         #     ronin-listener completion --install
         #     ronin-listener completion --uninstall
         #
-        # @since 0.2.0
-        #
         class Completion < Core::CLI::CompletionCommand
 
           completion_file File.join(ROOT,'data','completions','ronin-listener')
