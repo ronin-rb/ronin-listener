@@ -1,4 +1,5 @@
 /coverage
+/data/completions/ronin-listener
 /doc
 /pkg
 /man/*.[1-9]

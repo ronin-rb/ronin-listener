@@ -18,6 +18,7 @@ metadata:
   rubygems_mfa_required: 'true'
 
 generated_files:
+ - data/completions/ronin-listener
  - man/ronin-listener.1
  - man/ronin-listener-dns.1
  - man/ronin-listener-http.1
