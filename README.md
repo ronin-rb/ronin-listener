@@ -77,7 +77,7 @@ ronin-listener new http file.rb
 * [Ruby] >= 3.0.0
 * [ronin-listener-dns] ~> 0.1
 * [ronin-listener-http] ~> 0.1
-* [ronin-core] ~> 0.1
+* [ronin-core] ~> 0.2
 
 ## Install
 

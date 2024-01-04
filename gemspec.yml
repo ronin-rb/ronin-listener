@@ -20,6 +20,7 @@ metadata:
 generated_files:
  - data/completions/ronin-listener
  - man/ronin-listener.1
+ - man/ronin-listener-completion.1
  - man/ronin-listener-dns.1
  - man/ronin-listener-http.1
  - man/ronin-listener-new.1
@@ -32,7 +33,7 @@ dependencies:
   # Ronin dependencies:
   ronin-listener-dns: ~> 0.1
   ronin-listener-http: ~> 0.1
-  ronin-core: ~> 0.1
+  ronin-core: ~> 0.2
 
 development_dependencies:
   bundler: ~> 2.0
