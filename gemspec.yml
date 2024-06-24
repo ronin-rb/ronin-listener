@@ -2,7 +2,8 @@ name: ronin-listener
 summary: A Ruby CLI utility for receiving exfiltrated data.
 description: |
   ronin-listener is a small CLI utility for receiving exfiltrated data over DNS
-  or HTTP.
+  or HTTP. Supports logging DNS queries and HTTP requests as TXT, CVS, JSON,
+  or NDJSON.
 
 license: LGPL-3.0
 authors: Postmodern
