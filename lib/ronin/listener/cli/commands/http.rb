@@ -125,14 +125,7 @@ module Ronin
 
               log_info "Received HTTP request from #{remote_addr.ip_address}:#{remote_addr.ip_port} ..."
 
-              puts "#{request.method} #{request.path}"
-
-              request.headers.each do |name,value|
-                puts "#{name}: #{value}"
-              end
-
-              puts request.body if request.body
-              puts
+              print_request(request)
 
               output_file << request if output_file
             end
@@ -151,6 +144,23 @@ module Ronin
               vhost: options[:vhost],
               root:  options[:root]
             }
+          end
+
+          #
+          # Prints an HTTP request.
+          #
+          # @param [Async::HTTP::Protocol::HTTP1::Request,
+          #         Async::HTTP::Protocol::HTTP2::Request] request
+          #
+          def print_request(request)
+            puts "#{request.method} #{request.path}"
+
+            request.headers.each do |name,value|
+              puts "#{name}: #{value}"
+            end
+
+            puts request.body if request.body
+            puts
           end
 
         end
