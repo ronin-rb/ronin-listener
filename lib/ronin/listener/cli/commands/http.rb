@@ -139,7 +139,8 @@ module Ronin
           end
 
           #
-          # Maps options to keyword arguments for `Ronin::Listener::HTTP.listen`.
+          # Maps options to keyword arguments for
+          # `Ronin::Listener::HTTP.listen`.
           #
           # @return [Hash{Symbol => Object}]
           #
