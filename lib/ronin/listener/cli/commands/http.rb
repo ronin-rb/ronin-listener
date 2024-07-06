@@ -120,6 +120,8 @@ module Ronin
                             options[:output_format].open(options[:output])
                           end
 
+            log_info "Listening on #{options[:host]}:#{options[:port]} ..."
+
             Ronin::Listener::HTTP.listen(**server_kwargs) do |request|
               log_info "Received HTTP request from #{request.remote_ip}:#{request.remote_port} ..."
 

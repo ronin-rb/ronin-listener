@@ -112,6 +112,8 @@ module Ronin
                             options[:output_format].open(options[:output])
                           end
 
+            log_info "Listening on #{options[:host]}:#{options[:port]} ..."
+
             Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query|
               log_info "Received DNS query: #{query.type} #{query.label} from #{query.source}"
               output_file << query if output_file
