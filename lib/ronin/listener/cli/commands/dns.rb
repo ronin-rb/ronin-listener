@@ -114,7 +114,7 @@ module Ronin
 
             log_info "Listening on #{options[:host]}:#{options[:port]} ..."
 
-            Ronin::Listener::DNS.listen(domain,**proxy_kwargs) do |query|
+            Ronin::Listener::DNS.listen(domain,**server_kwargs) do |query|
               log_info "Received DNS query: #{query.type} #{query.label} from #{query.source}"
               output_file << query if output_file
             end
@@ -125,7 +125,7 @@ module Ronin
           #
           # @return [Hash{Symbol => Object}]
           #
-          def proxy_kwargs
+          def server_kwargs
             {
               host: options[:host],
               port: options[:port]
