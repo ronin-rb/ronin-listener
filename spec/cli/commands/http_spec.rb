@@ -124,4 +124,32 @@ describe Ronin::Listener::CLI::Commands::Http do
       end
     end
   end
+
+  describe "#server_kwargs" do
+    let(:host)  { '127.0.0.1' }
+    let(:port)  { 9000 }
+    let(:vhost) { 'example.com' }
+    let(:root)  { '/root/' }
+    let(:argv) do
+      [
+        '--host', host,
+        '--port', port.to_s,
+        '--vhost', vhost,
+        '--root', root
+      ]
+    end
+
+    before { subject.option_parser.parse(argv) }
+
+    it "must return a Hash including '--host', '--port', '--vhost', and '--root' option values" do
+      expect(subject.server_kwargs).to eq(
+        {
+          host:  host,
+          port:  port,
+          vhost: vhost,
+          root:  root
+        }
+      )
+    end
+  end
 end

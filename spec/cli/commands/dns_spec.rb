@@ -120,4 +120,26 @@ describe Ronin::Listener::CLI::Commands::Dns do
       end
     end
   end
+
+  describe "#server_kwargs" do
+    let(:host)  { '127.0.0.1' }
+    let(:port)  { 5353 }
+    let(:argv) do
+      [
+        '--host', host,
+        '--port', port.to_s,
+      ]
+    end
+
+    before { subject.option_parser.parse(argv) }
+
+    it "must return a Hash including '--host' and '--port'" do
+      expect(subject.server_kwargs).to eq(
+        {
+          host:  host,
+          port:  port
+        }
+      )
+    end
+  end
 end
