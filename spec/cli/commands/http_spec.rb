@@ -118,6 +118,10 @@ describe Ronin::Listener::CLI::Commands::Http do
       it "must default options[:port] to 8080" do
         expect(subject.options[:port]).to eq(8080)
       end
+
+      it "must default options[:root] to '/'" do
+        expect(subject.options[:root]).to eq('/')
+      end
     end
   end
 end
