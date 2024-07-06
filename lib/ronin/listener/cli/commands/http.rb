@@ -157,9 +157,12 @@ module Ronin
             request.headers.each do |name,value|
               puts "#{name}: #{value}"
             end
-
-            puts request.body if request.body
             puts
+
+            if request.body
+              puts request.body
+              puts
+            end
           end
 
         end
