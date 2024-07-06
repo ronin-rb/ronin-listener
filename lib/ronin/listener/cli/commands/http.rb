@@ -116,7 +116,7 @@ module Ronin
           # Runs the `ronin-listener http` command.
           #
           def run
-            output_file = if options[:output] && options[:output_format]
+            output_file = if options[:output]
                             options[:output_format].open(options[:output])
                           end
 

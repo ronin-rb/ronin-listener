@@ -108,7 +108,7 @@ module Ronin
           #   The `DOMAIN` argument.
           #
           def run(domain)
-            output_file = if options[:output] && options[:output_format]
+            output_file = if options[:output]
                             options[:output_format].open(options[:output])
                           end
 
