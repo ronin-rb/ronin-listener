@@ -33,7 +33,7 @@ required_ruby_version: ">= 3.0.0"
 dependencies:
   # Ronin dependencies:
   ronin-listener-dns: ~> 0.1.0.rc1
-  ronin-listener-http: ~> 0.1.0.rc1
+  ronin-listener-http: ~> 0.1.0.rc2
   ronin-core: ~> 0.2.0.rc1
 
 development_dependencies:

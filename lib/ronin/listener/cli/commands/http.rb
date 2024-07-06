@@ -121,9 +121,7 @@ module Ronin
                           end
 
             Ronin::Listener::HTTP.listen(**server_kwargs) do |request|
-              remote_addr = request.remote_address
-
-              log_info "Received HTTP request from #{remote_addr.ip_address}:#{remote_addr.ip_port} ..."
+              log_info "Received HTTP request from #{request.remote_ip}:#{request.remote_port} ..."
 
               print_request(request)
 
@@ -149,8 +147,7 @@ module Ronin
           #
           # Prints an HTTP request.
           #
-          # @param [Async::HTTP::Protocol::HTTP1::Request,
-          #         Async::HTTP::Protocol::HTTP2::Request] request
+          # @param [Ronin::Listener::HTTP::Request] request
           #
           def print_request(request)
             puts "#{request.method} #{request.path}"
