@@ -107,5 +107,17 @@ describe Ronin::Listener::CLI::Commands::Dns do
         end
       end
     end
+
+    context "when no options are given" do
+      let(:argv) { [] }
+
+      it "must default options[:host] to '0.0.0.0'" do
+        expect(subject.options[:host]).to eq('0.0.0.0')
+      end
+
+      it "must default options[:port] to 53" do
+        expect(subject.options[:port]).to eq(53)
+      end
+    end
   end
 end
