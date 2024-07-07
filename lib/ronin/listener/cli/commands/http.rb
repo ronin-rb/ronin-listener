@@ -125,7 +125,7 @@ module Ronin
             Ronin::Listener::HTTP.listen(**server_kwargs) do |request|
               log_info "Received HTTP request from #{request.remote_ip}:#{request.remote_port} ..."
 
-              print_request(request)
+              puts(request)
 
               output_file << request if output_file
             end
@@ -144,25 +144,6 @@ module Ronin
               vhost: options[:vhost],
               root:  options[:root]
             }
-          end
-
-          #
-          # Prints an HTTP request.
-          #
-          # @param [Ronin::Listener::HTTP::Request] request
-          #
-          def print_request(request)
-            puts "#{request.method} #{request.path}"
-
-            request.headers.each do |name,value|
-              puts "#{name}: #{value}"
-            end
-            puts
-
-            if request.body
-              puts request.body
-              puts
-            end
           end
 
         end
