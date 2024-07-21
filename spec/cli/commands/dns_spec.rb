@@ -127,7 +127,7 @@ describe Ronin::Listener::CLI::Commands::Dns do
     let(:argv) do
       [
         '--host', host,
-        '--port', port.to_s,
+        '--port', port.to_s
       ]
     end
 
