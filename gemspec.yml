@@ -5,7 +5,7 @@ description: |
   or HTTP. Supports logging DNS queries and HTTP requests as TXT, CVS, JSON,
   or NDJSON.
 
-license: LGPL-3.0
+license: LGPL-3.0-or-later
 authors: Postmodern
 email: postmodern.mod3@gmail.com
 homepage: https://ronin-rb.dev/
