@@ -18,11 +18,11 @@
 # along with ronin-listener.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/listener/cli/command'
-require 'ronin/listener/output_formats'
-require 'ronin/listener/http'
+require_relative '../command'
+require_relative '../../output_formats'
 
 require 'ronin/core/cli/logging'
+require 'ronin/listener/http'
 
 module Ronin
   module Listener

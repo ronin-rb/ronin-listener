@@ -18,7 +18,8 @@
 # along with ronin-listener.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/listener/cli/command'
+require_relative '../command'
+
 require 'command_kit/commands/auto_load'
 
 module Ronin

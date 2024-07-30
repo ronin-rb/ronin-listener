@@ -18,9 +18,10 @@
 # along with ronin-listener.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-require 'ronin/listener/cli/command'
+require_relative '../../command'
+require_relative '../../../root'
+
 require 'ronin/core/cli/generator'
-require 'ronin/listener/root'
 
 module Ronin
   module Listener
